@@ -1,0 +1,66 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Odibee Sans', cursive;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#circulo{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 60px;
+    height: 60px;
+    transition: 0.2s cubic-bezier(0,.01,1,1.01);
+    background-color: rgb(245, 1, 1);
+    border-radius: 50%;
+    transform:translate3d(calc(var(--x) - 50px),var(--y),0);
+ }
+
+.stop{ transform:translate3d(calc(var(--x) - 25px),calc(var(--y) - 25px),0)scale(0) !important;} 
+
+
+.btn-rounded{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border:1px solid rgb(139, 139, 139);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-rounded span{
+    z-index: 1;
+    font-size: 30px;
+}
+.btn-rounded::before{
+    content:'';
+    position: absolute;
+    top:var(--yy);
+    left: var(--xx);
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    background-color:rgb(245, 1, 1);
+    transition: width 0.5s,height 0.5s;
+    transform:translate(-50%,-50%);
+}
+
+.btn-rounded:hover::before{
+    
+    width: 500px;
+    height: 500px;
+}
+ 
