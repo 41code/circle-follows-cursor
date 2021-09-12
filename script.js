@@ -11,14 +11,12 @@
         item.addEventListener("mouseover",function(e){
             cursor.classList.add("stop");
         })
-    });
-
-    btnRouded.forEach((item)=>{
         item.addEventListener("mouseout",function(e){
             cursor.classList.remove("stop");
         })
     });
 
+    
     btnRouded.forEach((item)=>{
         item.addEventListener("mousemove",function(e){
 
